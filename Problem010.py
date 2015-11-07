@@ -1,33 +1,26 @@
 #!/usr/bin/python
+#coding:utf8
 
-# https://projecteuler.net/problem=10
-# Sum of primes below 2.000.000
+# http://projecteuler.net/problem=10
+#
+# PROBLEM CONTENT:
+# The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+#
+# Find the sum of all the primes below two million.
+#
 
-from itertools import islice
-from itertools import count
-from math import sqrt
+# EXPLANATION:
 
-def is_prime(n):
-    if n < 2 or n % 2 == 0: return False
-    if n == 2 or n == 3: return True
-    return all(n%i for i in islice(count(3,2), int(sqrt(n)-1)))
+import time
+from primes import sieve_of_eratosthenes
 
 limit = 2000000
 
-# Using the sieve of Erastothenes
-sieve_bound = (limit - 1) / 2
-sieve = [False] * sieve_bound
-# 1 is not a prime number
-sieve[0] = True
-cross_limit = (int(sqrt(limit)) -1) / 2
-for i in xrange(1, cross_limit):
-    if sieve[i] == False:
-        for j in xrange(2*i*(i+1), sieve_bound, 2*i+1):
-            sieve[j] = True
+def main():
+    print sum(sieve_of_eratosthenes(limit-1))
 
-sumation = 2
-for i in xrange(0, sieve_bound):
-    if sieve[i] == False:
-        sumation += (2*i + 1)
-
-print sumation
+if __name__ == '__main__':
+    start = time.time()
+    main()
+    elapsed = time.time() - start
+    print 'Solved in %.2f seconds' % elapsed
