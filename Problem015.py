@@ -43,6 +43,7 @@ def main():
     # Matrix representing the number of paths from a node to the bottom-right
     # corner
     nodesGrid = []
+    initialise_nodes_grid(nodesGrid)
     for i in range(verDim-1, -1, -1):
         for j in range(horDim-1, -1, -1):
             nodesGrid[i][j] = nodesGrid[i+1][j] + nodesGrid[i][j+1]

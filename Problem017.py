@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #coding:utf8
 
 # http://projecteuler.net/problem=17
@@ -8,9 +8,9 @@
 # then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
 #
 # If all the numbers from 1 to 1000 (one thousand) inclusive were written out
-# in words, how many letters would be used? 
+# in words, how many letters would be used?
 #
-#  Do not count spaces or hyphens. For example, 342 (three hundred and
+# Do not count spaces or hyphens. For example, 342 (three hundred and
 # forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20
 # letters. The use of "and" when writing out numbers is in compliance with
 # British usage.
@@ -27,8 +27,8 @@ def number_to_string(n):
     result = ''
     lastDigit = n % 10
     twoLastDigits = n % 100
-    ten = (n%100) / 10
-    hundred = n/100
+    ten = int((n%100) / 10)
+    hundred = int(n/100)
 
     if hundred != 0:
         result += unitDigits[hundred]+'hundred'
