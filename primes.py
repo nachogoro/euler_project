@@ -22,7 +22,7 @@ def sieve_of_eratosthenes(n):
     for i, isComposite in enumerate(sieve):
         if isComposite == False:
             primes.append(2*i+1)
-            for j in xrange(3*i+1, sieve_dim, 2*i+1):
+            for j in range(3*i+1, sieve_dim, 2*i+1):
                 sieve[j] = True
     return primes
 
