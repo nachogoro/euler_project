@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # Takes the number of an EulerProject exercise and generates the Python file to
 # start working on it.
@@ -14,15 +14,13 @@ import sys
 import requests
 import codecs
 
-import urllib
+import urllib.request
 
 base_url = 'http://projecteuler.net/problem='
 
 def retrieve_html(problemId):
-    sock = urllib.urlopen(base_url+str(problemId))
-    htmlSource = sock.read()
-    sock.close()
-    return htmlSource
+    with urllib.request.urlopen(base_url+str(problemId)) as url:
+        return url.read()
 
 def extract_content(htmlSource):
     tree = html.fromstring(htmlSource)
@@ -31,14 +29,14 @@ def extract_content(htmlSource):
 
 def main():
     if len(sys.argv) != 2:
-        print 'Usage: euler_scraper.py <problem number>'
+        print('Usage: euler_scraper.py <problem number>')
         exit()
 
     problemId = int(sys.argv[1])
     fileName = getcwd() + '/Problem' + '%03d' % problemId + '.py'
 
     if path.exists(fileName):
-        print 'Error: %s exists already' % fileName
+        print('Error: %s exists already' % fileName)
         exit()
 
     # Get HTML source
@@ -48,10 +46,10 @@ def main():
     problemContent = extract_content(htmlSource)
 
     outputFile = codecs.open(fileName, 'w', 'utf-8')
-    outputFile.write(u'#!/usr/bin/python\n')
+    outputFile.write(u'#!/usr/bin/python3\n')
     outputFile.write(u'#coding:utf8\n')
     outputFile.write(u'\n')
-    outputFile.write(u'# ' + unicode(base_url + str(problemId)) + u'\n')
+    outputFile.write(u'# ' + str(base_url + str(problemId)) + u'\n')
     outputFile.write(u'#\n')
     outputFile.write(u'# PROBLEM CONTENT:\n')
     for line in problemContent:
@@ -59,8 +57,8 @@ def main():
             nchar = len(line)
             if len(line) > 77:
                 nchar = line[:77].rfind(' ')
-            if isinstance(line, unicode) == False:
-                line = unicode(line, 'utf-8')
+            if isinstance(line, str) == False:
+                line = str(line, 'utf-8')
             lineToWrite = u'# ' + line[:nchar] + u'\n'
             outputFile.write(lineToWrite)
             line = line[nchar+1:]
@@ -77,11 +75,11 @@ def main():
     outputFile.write(u'    start = time.time()\n')
     outputFile.write(u'    main()\n')
     outputFile.write(u'    elapsed = time.time() - start\n')
-    outputFile.write(u'    print \'Solved in %.2f seconds\' % elapsed\n')
+    outputFile.write(u'    print(\'Solved in %.2f seconds\' % elapsed)\n')
     outputFile.close()
 
     stats = os.stat(fileName)
-    os.chmod(fileName, stats.st_mode | 0111)
+    os.chmod(fileName, stats.st_mode | 0o111)
 
 
 
