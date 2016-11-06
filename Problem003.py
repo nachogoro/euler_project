@@ -15,10 +15,10 @@ from primes import prime_factors
 num = 600851475143
 
 def main():
-    print prime_factors(num)[-1]
+    print(prime_factors(num)[-1])
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

@@ -18,10 +18,10 @@ from math import factorial
 
 def main():
     value = str(factorial(100))
-    print sum(int(x) for x in value)
+    print(sum(int(x) for x in value))
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

@@ -33,10 +33,10 @@ def main():
     result = 2
     for i in range(3, num+1):
         result = lcm(i, result)
-    print result
+    print(result)
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

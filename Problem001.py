@@ -27,10 +27,10 @@ def main():
     sum_mult_3 = 3*end_of_3_mult*(end_of_3_mult+1)/2
     sum_mult_5 = 5*end_of_5_mult*(end_of_5_mult+1)/2
     sum_mult_15 = 15*end_of_15_mult*(end_of_15_mult+1)/2
-    print sum_mult_3 + sum_mult_5 - sum_mult_15
+    print((sum_mult_3 + sum_mult_5 - sum_mult_15))
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = (time.time() - start)
-    print 'Solved in %.2f seconds' % elapsed
+    print(('Solved in %.2f seconds' % elapsed))

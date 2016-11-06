@@ -26,10 +26,10 @@ def main():
                 max_palindrome = a*b
             b -= 1
         a -= 1
-    print max_palindrome
+    print(max_palindrome)
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

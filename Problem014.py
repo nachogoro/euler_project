@@ -40,7 +40,7 @@ def main():
     longestSequence = 0
     longestSeed = None
 
-    for i in xrange(2, limit-1):
+    for i in range(2, limit-1):
         nJumps = 1
         currentNumber = i
         while currentNumber != 1:
@@ -54,11 +54,11 @@ def main():
             longestSeed = i
         jumpsUntilOne[i] = nJumps
 
-    print longestSeed
+    print(longestSeed)
 
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

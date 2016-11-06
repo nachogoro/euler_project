@@ -24,10 +24,10 @@ def main():
             break
         if i%2 == 0:
             result += i
-    print result
+    print(result)
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

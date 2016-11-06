@@ -30,7 +30,7 @@ def initialise():
     for line in lines:
         tmpList = line.split()
         # Parse str to int
-        triangle.append(map(int, tmpList))
+        triangle.append(list(map(int, tmpList)))
 
     return triangle
 
@@ -43,18 +43,18 @@ def main():
         if len(row) == 1:
             newRow.append(row[0])
         else:
-            for i in xrange(0, len(row)-1):
+            for i in range(0, len(row)-1):
                 newRow.append(max(row[i], row[i+1]))
 
         # Sum it to the previous row and repeat the process
         if (index != 0):
-            for i in xrange(0, len(newRow)):
+            for i in range(0, len(newRow)):
                 triangle[index-1][i] += newRow[i]
 
-    print triangle[0]
+    print(triangle[0])
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

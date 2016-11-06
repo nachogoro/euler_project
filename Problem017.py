@@ -53,13 +53,13 @@ def main():
     # Initialise to 'one thousand'
     sum = 11
 
-    for i in xrange(1, 1000):
+    for i in range(1, 1000):
         sum += len(number_to_string(i))
 
-    print sum
+    print(sum)
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

@@ -17,10 +17,10 @@ from primes import sieve_of_eratosthenes
 limit = 2000000
 
 def main():
-    print sum(sieve_of_eratosthenes(limit-1))
+    print(sum(sieve_of_eratosthenes(limit-1)))
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

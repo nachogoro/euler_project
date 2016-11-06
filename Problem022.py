@@ -32,11 +32,11 @@ def main():
             score += (ord(letter) - ord('A') + 1)
         result += (index+1)*score
 
-    print result
+    print(result)
 
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

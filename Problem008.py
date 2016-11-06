@@ -85,11 +85,11 @@ def main():
         if result >= max_mult:
             max_mult = result
 
-    print max_mult
+    print(max_mult)
 
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

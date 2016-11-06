@@ -33,23 +33,23 @@ verDim = 20
 
 
 def initialise_nodes_grid(nodesGrid):
-    defaultRow = [0 for i in xrange(0,horDim+1)]
+    defaultRow = [0 for i in range(0,horDim+1)]
     defaultRow[horDim] = 1
-    for i in xrange(0, verDim):
+    for i in range(0, verDim):
         nodesGrid.append(defaultRow)
-    nodesGrid.append([1 for i in xrange(0, horDim+1)])
+    nodesGrid.append([1 for i in range(0, horDim+1)])
 
 def main():
     # Matrix representing the number of paths from a node to the bottom-right
     # corner
     nodesGrid = []
-    for i in xrange(verDim-1, -1, -1):
-        for j in xrange(horDim-1, -1, -1):
+    for i in range(verDim-1, -1, -1):
+        for j in range(horDim-1, -1, -1):
             nodesGrid[i][j] = nodesGrid[i+1][j] + nodesGrid[i][j+1]
-    print nodesGrid[0][0]
+    print(nodesGrid[0][0])
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

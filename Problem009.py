@@ -22,14 +22,14 @@ import time
 limit = 1000
 
 def main():
-    for a in xrange(1, int(limit/3)+1):
-        for b in xrange(a+1, int((limit-a)/2)+1):
+    for a in range(1, int(limit/3)+1):
+        for b in range(a+1, int((limit-a)/2)+1):
             c = limit - a - b
             if a*a + b*b == c*c:
-                print a*b*c
+                print(a*b*c)
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

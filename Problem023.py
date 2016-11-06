@@ -31,7 +31,7 @@ abundant_numbers = []
 def sum_of_proper_divisors(n):
     divisors = 1
     squareRoot = int(sqrt(n))
-    for i in xrange(2, squareRoot+1):
+    for i in range(2, squareRoot+1):
         if n%i == 0:
             divisors += i + n/i
 
@@ -42,7 +42,7 @@ def sum_of_proper_divisors(n):
 
 def main():
     # Find all abundant numbers below 28123
-    for i in xrange(12, limit+1):
+    for i in range(12, limit+1):
         if sum_of_proper_divisors(i) > i:
             abundant_numbers.append(i)
 
@@ -65,11 +65,11 @@ def main():
 
     # The result is the sum of all numbers from 1 to 28123 minus the sum of all
     # numbers which can be expressed as the sum of two abundant numbers
-    print (limit*(limit+1)/2) - allSummed
+    print((limit*(limit+1)/2) - allSummed)
 
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

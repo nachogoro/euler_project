@@ -52,10 +52,10 @@ def main():
             currentMonth = 0
             currentYear += 1
 
-    print sundaysOnTheFirst
+    print(sundaysOnTheFirst)
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

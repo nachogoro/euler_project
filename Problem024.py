@@ -48,10 +48,10 @@ def main():
 
     for letter in desiredSequence:
         sys.stdout.write(str(letter))
-    print
+    print()
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

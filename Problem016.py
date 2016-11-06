@@ -16,10 +16,10 @@ def main():
     sum = 0
     for i in twoToThe1000:
         sum += int(i)
-    print sum
+    print(sum)
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

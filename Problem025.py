@@ -21,7 +21,7 @@ def main():
     index = 1
     for term in fibonacci_generator():
         if len(str(term)) >= 1000:
-            print index
+            print(index)
             break
         index += 1
 
@@ -29,4 +29,4 @@ if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

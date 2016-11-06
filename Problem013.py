@@ -214,10 +214,10 @@ def main():
                 20849603980134001723930671666823555245252804609722 +
                 53503534226472524250874054075591789781264330331690
             )
-    print str(value)[:10]
+    print(str(value)[:10])
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

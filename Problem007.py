@@ -24,11 +24,11 @@ def main():
         if is_prime(last_candidate):
             primes_found += 1
 
-    print last_candidate
+    print(last_candidate)
 
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

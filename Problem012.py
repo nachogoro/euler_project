@@ -61,10 +61,10 @@ def find_triangular_index(factor_limit):
 def main():
     index = find_triangular_index(500)
     triangle = (index * (index + 1)) / 2
-    print triangle
+    print(triangle)
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

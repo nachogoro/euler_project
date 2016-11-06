@@ -27,11 +27,11 @@ def main():
     square_sum = limit*(limit+1)/2
     square_sum *= square_sum
     sum_of_squares = (2*limit+1)*(limit+1)*limit/6
-    print (square_sum - sum_of_squares)
+    print((square_sum - sum_of_squares))
 
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print 'Solved in %.2f seconds' % elapsed
+    print('Solved in %.2f seconds' % elapsed)

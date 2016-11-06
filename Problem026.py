@@ -68,10 +68,10 @@ def main():
             d = i
         elif max_cycle > i:
             break
-    print('d: {}, recurring cycle length: {})'.format(d, max_cycle))
+    print(('d: {}, recurring cycle length: {})'.format(d, max_cycle)))
 
 if __name__ == '__main__':
     start = time.time()
     main()
     elapsed = time.time() - start
-    print('Solved in %.2f seconds' % elapsed)
+    print(('Solved in %.2f seconds' % elapsed))
