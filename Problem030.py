@@ -15,15 +15,19 @@
 # Find the sum of all the numbers that can be written as the sum of fifth
 # powers of their digits.
 #
-
 # EXPLANATION:
-# They need to be shorter than 7 digits
+# The highest value a digit can contribute is 9^5 = 59049
+# An n-digit number would have a value of at most 10^n.
+# The largest sum of the digits of an n-digit number is n*59049
+# The sum of digits grows slowlier than the value of the number itself. As soon
+# as we are processing a number of n digits which is larger than the largest
+# sum of an n-digit number, we are done. That definitely happens with 7-digit
 
 import time
 
 def main():
     total_result = 0
-    for i in range(2, 1000000):
+    for i in range(2, 999999):
         str_rep = str(i)
         this_num_sum = 0
         for c in str_rep:
