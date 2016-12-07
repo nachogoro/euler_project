@@ -14,6 +14,9 @@
 # Find the sum of all products whose multiplicand/multiplier/product identity
 # can be written as a 1 through 9 pandigital.
 #
+# Explanation:
+# As soon as the multiplicand is 4 digits, so is the product, so the upper
+# limit for multiplicand/multiplier is 9876
 
 import time
 
@@ -28,8 +31,8 @@ def main():
     result = 0
     products = []
 
-    for multiplicand in range(2, 31427):
-        for multiplier in range(multiplicand + 1, 987654322):
+    for multiplicand in range(2, 9876):
+        for multiplier in range(multiplicand + 1, 9876):
             product = multiplicand * multiplier
             string = str(product) + str(multiplicand) + str(multiplier)
             if len(string) > 9:
