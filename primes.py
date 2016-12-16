@@ -6,8 +6,8 @@ from math import sqrt
 
 # Checks whether n is prime or not
 def is_prime(n):
-    if n < 2 or n % 2 == 0: return False
     if n == 2 or n == 3: return True
+    if n < 2 or n % 2 == 0: return False
     return all(n%i for i in islice(count(3,2), int(sqrt(n)-1)))
 
 
