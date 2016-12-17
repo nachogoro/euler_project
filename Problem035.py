@@ -11,9 +11,6 @@
 # 71, 73, 79, and 97.
 #
 # How many circular primes are there below one million?
-#
-
-# EXPLANATION:
 
 import time
 from primes import sieve_of_eratosthenes, is_prime
