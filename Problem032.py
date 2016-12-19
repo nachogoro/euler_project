@@ -22,6 +22,9 @@ import time
 
 
 def is_pandigital(string):
+    if len(string) != 9:
+        return False
+
     removed_duplicates = set(string)
     return (len(removed_duplicates) == 9
             and sorted(removed_duplicates)[0] == '1')
@@ -39,8 +42,7 @@ def main():
                 # No need to keep checking
                 break
 
-            if (len(string) == 9
-                    and is_pandigital(string)
+            if (is_pandigital(string)
                     and product not in products):
                 result += product
                 products.append(product)
