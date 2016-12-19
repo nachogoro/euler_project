@@ -27,12 +27,42 @@ def sieve_of_eratosthenes(n):
     return primes
 
 
-# Returns the prime factors of n
-def prime_factors(n):
-    primes=sieve_of_eratosthenes(int(sqrt(n)))
-    prime_factors = []
-    for i in primes:
-        if n%i == 0:
-            prime_factors.append(i)
-    return prime_factors
+# Returns the prime factors of n.
+# If n is prime, it returns an empty list.
+# It takes a precomputed sieve
+def prime_factors(n, precomputed_sieve = None):
 
+    primes = precomputed_sieve
+
+    # Limit the sieve to be made
+    if primes == None:
+        limit = n
+        if n%2 == 0:
+            limit = int(n/2)
+        elif n%3 == 0:
+            limit = int(n/3)
+        elif n%5 == 0:
+            limit = int(n/5)
+
+        primes = sieve_of_eratosthenes(limit)
+
+    remain = n
+    prime_factors = []
+
+    for prime in primes:
+        if prime * prime > n:
+            prime_factors.append(remain)
+            return prime_factors
+
+        pf = False
+        while remain % prime == 0:
+            pf = True
+            remain = remain / prime
+
+        if pf == True:
+            prime_factors.append(prime)
+
+        if remain == 1:
+            return prime_factors
+
+    return prime_factors
