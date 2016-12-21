@@ -11,7 +11,7 @@
 
 # EXPLANATION:
 # Sum of divisible by 3: 3+6+9+ ...+999 = 3*(1+2+3...+333)
-# Sum of divisible by 5: 5+10+15+ ...+995 = 3*(1+2+3...+199)
+# Sum of divisible by 5: 5+10+15+ ...+995 = 5*(1+2+3...+199)
 # Sum of divisible by 15: 15*(1+2+3...+66)
 
 import time
